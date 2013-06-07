@@ -199,9 +199,9 @@
         <mkdir dir="${build_dir}/build"/>
         <javac srcdir="src"
                destdir="${build_dir}/build"
-               target="1.1"
-               source="1.2"
-               debug="true"
+               target="1.6"
+               source="1.6"
+               debug="false"
                deprecation="true"
                optimize="true" />
     </target>
@@ -334,7 +334,7 @@
         
         <!-- build -->
         
-        <copy file="../src/main/java/org/streamspf/hadoop/common/MD5.c" todir="${build_dir}/lib" />
+        <copy file="src/com/twmacinta/util/MD5.c" todir="${build_dir}/lib" />
         <antcall target="_update_lib_darwin" />
         <antcall target="_update_lib_linux" />
         <antcall target="_update_lib_freebsd" />
@@ -401,8 +401,8 @@ occurs.  A new seed will be printed at the start of each test.
     <!-- Generate header and C stub file plus normalized version -->
     <target name="_header" depends="compile">
         <uptodate property="header_uptodate" targetfile="${build_dir}/lib/MD5.h">
-            <srcfiles file="../src/main/java/org/streamspf/hadoop/common/MD5.c" />
-            <srcfiles file="../src/main/java/org/streamspf/hadoop/common/MD5.java" />
+            <srcfiles file="src/com/twmacinta/util/MD5.c" />
+            <srcfiles file="src/com/twmacinta/util/MD5.java" />
             <srcfiles file="${build_dir}/build/com/twmacinta/util/MD5.class" />
         </uptodate>
         <antcall target="_header_if_needed" />
@@ -473,7 +473,7 @@ occurs.  A new seed will be printed at the start of each test.
         </condition>
         <condition property="changed" value="MD5.c">
             <not>
-                <filesmatch file1="../src/main/java/org/streamspf/hadoop/common/MD5.c"
+                <filesmatch file1="src/com/twmacinta/util/MD5.c"
                             file2="src/lib/arch/${arch}/MD5.c" />
             </not>
         </condition>

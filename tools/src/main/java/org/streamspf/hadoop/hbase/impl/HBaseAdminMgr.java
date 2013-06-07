@@ -1,10 +1,9 @@
 package org.streamspf.hadoop.hbase.impl;
 
-import java.io.IOException;
-import org.apache.hadoop.hbase.client.HBaseAdmin;
-import org.apache.hadoop.hbase.client.HConnectionManager;
 import org.apache.hadoop.hbase.MasterNotRunningException;
 import org.apache.hadoop.hbase.ZooKeeperConnectionException;
+import org.apache.hadoop.hbase.client.HBaseAdmin;
+import org.apache.hadoop.hbase.client.HConnectionManager;
 import org.streamspf.hadoop.hbase.exceptions.HTableDefException;
 import org.streamspf.hadoop.hbase.pool.HTablePoolManager;
 

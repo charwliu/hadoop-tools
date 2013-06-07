@@ -15,19 +15,19 @@ public abstract class AbstractBaseDao implements HBaseDao {
 	}
 
 	public <T> boolean insert(T bean) throws HBaseDaoException {
-		return merge(bean, true, EnumSet.noneOf(DaoOption.class));
+		return upsert(bean, true, EnumSet.noneOf(DaoOption.class));
 	}
 
 	public <T> boolean update(T bean) throws HBaseDaoException {
-		 return merge(bean, false, EnumSet.noneOf(DaoOption.class));
+		 return upsert(bean, false, EnumSet.noneOf(DaoOption.class));
 	}
 
 	public <T> boolean insert(T bean, EnumSet<DaoOption> options) throws HBaseDaoException {
-		return merge(bean, true, options);
+		return upsert(bean, true, options);
 	}
 
 	public <T> boolean update(T bean, EnumSet<DaoOption> options) throws HBaseDaoException {
-		return merge(bean, false, options);
+		return upsert(bean, false, options);
 	}
 
 	public <T> List<T> query(Class<T> beanClass, Object startRowkey, Object stopRowkey) throws HBaseDaoException {
@@ -72,5 +72,5 @@ public abstract class AbstractBaseDao implements HBaseDao {
 
 	protected abstract <T> List<T> queryImpl(Class<T> beanClass, Object startRowkey, Object stopRowkey, int maxRows, EnumSet<DaoOption> options) throws HBaseDaoException;
 
-	protected abstract <T> boolean merge(T bean, boolean isInsert, EnumSet<DaoOption> options) throws HBaseDaoException;
+	protected abstract <T> boolean upsert(T bean, boolean isInsert, EnumSet<DaoOption> options) throws HBaseDaoException;
 }

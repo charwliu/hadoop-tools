@@ -1,7 +1,7 @@
 package org.streamspf.hadoop.hbase.simple;
 
 
-import org.streamspf.hadoop.common.MD5;
+import org.streamspf.util.MD5;
 import org.streamspf.hadoop.hbase.DefaultHBaseDao;
 import org.streamspf.hadoop.hbase.HBaseDao;
 import org.streamspf.hadoop.hbase.exceptions.HBaseDaoException;

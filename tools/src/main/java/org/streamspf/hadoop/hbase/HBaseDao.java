@@ -47,9 +47,9 @@ public interface HBaseDao {
 
 	public <T> void delete(EnumSet<DaoOption> options, Class<T> beanClass, Object rowkey) throws HBaseDaoException;
 
-	public <T> void delete(String paramString, Class<T> beanClass, Object paramObject1, Object paramObject2, Object[] paramArrayOfObject) throws HBaseDaoException;
+	public <T> void delete(String family, Class<T> beanClass, Object rowkey, Object key, Object[] keys) throws HBaseDaoException;
 
-	public <T> void delete(Class<T> beanClass, Object paramObject1, Object paramObject2, Object[] paramArrayOfObject) throws HBaseDaoException;
+	public <T> void delete(Class<T> beanClass, Object rowkey, Object key, Object[] keys) throws HBaseDaoException;
 
 	public <T> void trunc(Class<T> beanClass) throws HTableDefException;
 }

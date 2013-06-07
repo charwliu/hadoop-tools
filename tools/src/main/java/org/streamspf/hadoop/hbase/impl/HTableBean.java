@@ -9,7 +9,7 @@ import com.esotericsoftware.reflectasm.FieldAccess;
 import com.esotericsoftware.reflectasm.MethodAccess;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import org.streamspf.hadoop.common.MD5;
+import org.streamspf.util.MD5;
 import org.streamspf.hadoop.hbase.exceptions.HBaseDaoException;
 import org.streamspf.hadoop.hbase.exceptions.HTableDefException;
 import org.streamspf.hadoop.util.Fields;

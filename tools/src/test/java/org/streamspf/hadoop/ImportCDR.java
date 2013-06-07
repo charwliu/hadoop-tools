@@ -16,9 +16,9 @@ public class ImportCDR {
 			throws HBaseDaoException {
 		System.out.println("Usage: importcdr [quorum port batchNum threadNum]");
 
-		String quorum = args.length > 0 ? args[0] : "127.0.0.1";
-		String port = args.length > 1 ? args[1] : "2181";
-		int batchNum = args.length > 2 ? Integer.valueOf(args[2]) : 1000;
+		String quorum = args.length > 0 ? args[0] : "10.1.253.96,10.1.253.97,10.1.253.99";
+		String port = args.length > 1 ? args[1] : "2383";
+		int batchNum = args.length > 2 ? Integer.valueOf(args[2]) : 10000;
 		threadNum = args.length > 3 ? Integer.valueOf(args[3]) : 10;
 
 		HTablePoolManager.getHTablePool("default", quorum, port);
@@ -27,7 +27,7 @@ public class ImportCDR {
 
 		CallRecordDetail randomRecord = recordsGenerator.randomRecord(null);
 
-		HBaseDao hdao = new DefaultHBaseDao("MYHBASE");
+		HBaseDao hdao = new DefaultHBaseDao();
 		ArrayList records = new ArrayList(batchNum);
 
 		CdrBatch cdrBatch = new CdrBatch();

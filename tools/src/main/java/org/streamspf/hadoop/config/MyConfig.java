@@ -11,7 +11,7 @@ public class MyConfig {
 	public Map<String, String> createConfig() {
 		Map<String, String> config = new HashMap<String, String>();
 
-		config.put("hbase.zookeeper.quorum", "10.1.253.97, 10.1.253.98, 10.1.253.99"); // 192.168.46.122,192.168.46.123,192.168.46.125");
+		config.put("hbase.zookeeper.quorum", "10.1.253.96, 10.1.253.97, 10.1.253.99"); // 192.168.46.122,192.168.46.123,192.168.46.125");
 		config.put("hbase.zookeeper.property.clientPort", "2383");
 		config.put("zookeeper.session.timeout", "180000");
 		config.put("hhbase.table.references.max", "10");
